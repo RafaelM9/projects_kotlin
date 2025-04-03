@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import pt.ipg.happybirthday.ui.theme.HappyBirthdayTheme
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -50,7 +51,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
     Column(
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.SpaceAround,
         modifier = modifier
     ) {
         Text(
@@ -58,6 +59,7 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
             fontSize = 100 .sp,
             lineHeight = 116.sp,
             textAlign = TextAlign.Center
+            //modifier = Modifier.fillMaxSize()
         )
         Text(
             text = from,
@@ -73,6 +75,8 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        GreetingText(message = "Happy Birthday Rafael!", from = "From Emma")
+        GreetingText(message = "Happy Birthday Rafael!", from = "From Emma",
+            modifier = Modifier.fillMaxSize()
+                )
     }
 }
